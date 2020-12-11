@@ -17,7 +17,7 @@ Require the bundle with composer:
 
 # Database
 
-You will need to set up you .env file to set up a database.
+You will need to set up your .env file to set up a database.
 
 # How to use
 
@@ -33,9 +33,9 @@ You will need to set up you .env file to set up a database.
 * To render a page you will need to call the renderPage method from the renderManager Class.
 ```
 $html = $renderManager->renderPage($page);
-return $this->render('home/first_page.html.twig', ['html'=>$html]);
+return $this->render('template.html.twig', ['html'=>$html]);
 ```
-* The first argument is the page, the seconf one is a boolean (true for editor, false or nothing for front)
+* The first argument is the page, the second one is a boolean (true for editor, false or nothing for front)
 
 
 
