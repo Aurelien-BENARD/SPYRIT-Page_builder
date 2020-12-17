@@ -9,7 +9,7 @@ A page builder for Symfony and Doctrine.
 
 # Installation
 
-Require the bundle with composer:
+Install the bundle with composer:
 
 `composer require spyrit/page-builder-bundle`
 
@@ -19,13 +19,21 @@ Require the bundle with composer:
 
 You will need to set up your .env file to set up a database.
 
+You will need to create entities, if needed they can extend interface provided by the bundle (PageInterface, ZoneInterface, BlockInterface)
+
 # How to use
 
 #### Add a widget
 
-* Add a new Widget that heritate from BaseWidget.
-* Add templates for your widget (one editor template and one front template if needed)
+* If you create a new Widget, you *must* generate a migration to allow a new ENUM value in column `block`.`widget`. To do so, open a SQL client and remove the comment `(DC2Type:Widget)` for that column and then run `bin/console d:m:di`.
+* Add a new Widget class that heritate from BaseWidget.
+* Add 1 or 2 templates for your widget (one editor template and one front template if needed)
 * Create your widget's form
+
+
+#### Use a widget
+
+To use a widget you can use the editor provided via the bundle ('editor.html.twig' and 'editor_js.html.twig')
 
 
 #### Render
